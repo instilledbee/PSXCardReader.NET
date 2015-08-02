@@ -53,6 +53,12 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PSXMMCLibrary\PSXMMCLibrary.csproj">
+      <Project>{bf21b471-1928-4a7e-8bb2-0a13d106e6ed}</Project>
+      <Name>PSXMMCLibrary</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
