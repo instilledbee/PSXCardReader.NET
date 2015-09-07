@@ -54,6 +54,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\PSXMMCLibrary.Models\PSXMMCLibrary.Models.csproj">
+      <Project>{bf0412a9-cafd-42c9-8868-67fffc390565}</Project>
+      <Name>PSXMMCLibrary.Models</Name>
+    </ProjectReference>
     <ProjectReference Include="..\PSXMMCLibrary\PSXMMCLibrary.csproj">
       <Project>{bf21b471-1928-4a7e-8bb2-0a13d106e6ed}</Project>
       <Name>PSXMMCLibrary</Name>
