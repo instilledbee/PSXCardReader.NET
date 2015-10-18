@@ -1,17 +1,14 @@
 ﻿using PSXCardReader.NET.Presenter.Interfaces;
 using PSXCardReader.NET.View.Interfaces;
-using System;
-using System.Collections.Generic;
+using PSXMMCLibrary.Models;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace PSXCardReader.NET.Presenter
 {
     public class MainPresenter : IMainPresenter
     {
         protected IMainView _view;
+        protected MemoryCard _memoryCard;
 
         public MainPresenter(IMainView view)
         {

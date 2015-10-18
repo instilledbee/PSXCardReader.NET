@@ -35,6 +35,7 @@ namespace PSXCardReader.NET
             this.mmItemFileOpen = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mmItemFileExit = new System.Windows.Forms.ToolStripMenuItem();
+            this.listView1 = new System.Windows.Forms.ListView();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -73,28 +74,37 @@ namespace PSXCardReader.NET
             // 
             this.mmItemFileOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mmItemFileOpen.Name = "mmItemFileOpen";
-            this.mmItemFileOpen.Size = new System.Drawing.Size(152, 22);
+            this.mmItemFileOpen.Size = new System.Drawing.Size(112, 22);
             this.mmItemFileOpen.Text = "&Open...";
             this.mmItemFileOpen.Click += new System.EventHandler(this.mmItemFileOpen_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(109, 6);
             // 
             // mmItemFileExit
             // 
             this.mmItemFileExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mmItemFileExit.Name = "mmItemFileExit";
-            this.mmItemFileExit.Size = new System.Drawing.Size(152, 22);
+            this.mmItemFileExit.Size = new System.Drawing.Size(112, 22);
             this.mmItemFileExit.Text = "&Exit";
             this.mmItemFileExit.Click += new System.EventHandler(this.mmItemFileExit_Click);
+            // 
+            // listView1
+            // 
+            this.listView1.Location = new System.Drawing.Point(15, 28);
+            this.listView1.Name = "listView1";
+            this.listView1.Size = new System.Drawing.Size(248, 212);
+            this.listView1.TabIndex = 2;
+            this.listView1.UseCompatibleStateImageBehavior = false;
             // 
             // FormMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(284, 265);
+            this.Controls.Add(this.listView1);
             this.Controls.Add(this.lblFile);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
@@ -116,6 +126,7 @@ namespace PSXCardReader.NET
         private System.Windows.Forms.ToolStripMenuItem mmItemFileOpen;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem mmItemFileExit;
+        private System.Windows.Forms.ListView listView1;
     }
 }
 

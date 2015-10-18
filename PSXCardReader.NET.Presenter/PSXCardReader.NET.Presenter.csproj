@@ -48,6 +48,10 @@
       <Project>{089637a6-281a-4631-a23c-b993ed2bc6cc}</Project>
       <Name>PSXCardReader.NET.View</Name>
     </ProjectReference>
+    <ProjectReference Include="..\PSXMMCLibrary.Models\PSXMMCLibrary.Models.csproj">
+      <Project>{bf0412a9-cafd-42c9-8868-67fffc390565}</Project>
+      <Name>PSXMMCLibrary.Models</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
