@@ -3,10 +3,9 @@ using System.IO;
 
 namespace PSXCardReader.NET.View.Interfaces
 {
-    public interface IMainView
+    public interface IMainView : IBaseView
     {
         void UpdateOpenedFile(string fileName);
-        void ShowView();
 
         event OnFileOpenHandler OnFileOpen;
     }

@@ -40,8 +40,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Interfaces\IMainPresenter.cs" />
+    <Compile Include="Interfaces\ITracePresenter.cs" />
     <Compile Include="MainPresenter.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TextBoxTracePresenter.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\PSXCardReader.NET.View\PSXCardReader.NET.View.csproj">
@@ -51,6 +53,10 @@
     <ProjectReference Include="..\PSXMMCLibrary.Models\PSXMMCLibrary.Models.csproj">
       <Project>{bf0412a9-cafd-42c9-8868-67fffc390565}</Project>
       <Name>PSXMMCLibrary.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\PSXMMCLibrary\PSXMMCLibrary.csproj">
+      <Project>{bf21b471-1928-4a7e-8bb2-0a13d106e6ed}</Project>
+      <Name>PSXMMCLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

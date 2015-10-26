@@ -30,8 +30,6 @@ namespace PSXCardReader.NET
 
                 if (openDialog.ShowDialog() == DialogResult.OK)
                 {
-                    MessageBox.Show(openDialog.FileName);
-
                     OnFileOpen(this.FindForm(), new OnFileOpenArgs() { FilePath = openDialog.FileName });
                 }
             }
@@ -42,9 +40,21 @@ namespace PSXCardReader.NET
             lblFile.Text = "Memory Card File: " + fileName;
         }
 
+        public void HandleError(Exception ex)
+        {
+            MessageBox.Show(ex.Message, "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
         public void ShowView()
         {
             this.ShowDialog();
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            // Removing image margins (space for icons on left) from menubar items:
+            foreach (ToolStripMenuItem menuItem in menuStrip1.Items)
+                ((ToolStripDropDownMenu)menuItem.DropDown).ShowImageMargin = false;
         }
     }
 }
