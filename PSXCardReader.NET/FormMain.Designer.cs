@@ -97,10 +97,12 @@ namespace PSXCardReader.NET
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listSaves.Location = new System.Drawing.Point(15, 28);
+            this.listSaves.MultiSelect = false;
             this.listSaves.Name = "listSaves";
             this.listSaves.Size = new System.Drawing.Size(257, 212);
             this.listSaves.TabIndex = 2;
             this.listSaves.UseCompatibleStateImageBehavior = false;
+            this.listSaves.DoubleClick += new System.EventHandler(this.listSaves_DoubleClick);
             // 
             // FormMain
             // 

@@ -5,7 +5,9 @@ using PSXMMCLibrary.Models;
 using PSXMMCLibrary.Utilities;
 using System;
 using System.Diagnostics;
+using System.Drawing;
 using System.IO;
+using System.Linq;
 
 namespace PSXCardReader.NET.Presenter
 {
@@ -19,6 +21,15 @@ namespace PSXCardReader.NET.Presenter
         {
             _view = view;
             _view.OnFileOpen += _view_OnFileOpen;
+            _view.OnItemSelect += _view_OnItemSelect;
+        }
+
+        private void _view_OnItemSelect(object sender, OnItemSelectArgs e)
+        {
+            Trace.Write("Selected item index: " + e.BlockIndex);
+
+            Block selectedBlock = _memoryCard.Blocks[e.BlockIndex];
+            _view.ShowBlockDetails(selectedBlock.Title, selectedBlock.BlocksUsed);
         }
 
         private void _view_OnFileOpen(object sender, OnFileOpenArgs e)
@@ -33,7 +44,13 @@ namespace PSXCardReader.NET.Presenter
             {
                 _filePath = filePath;
                 ParseFileData();
-                _view.UpdateOpenedFile(Path.GetFileName(filePath));
+
+                if (_memoryCard != null)
+                {
+                    _view.UpdateOpenedFile(Path.GetFileName(filePath));
+                    _view.UpdateBlockList(_memoryCard.Blocks.Select(x => FormatBlockTitle(x)).ToList(), 
+                        _memoryCard.Blocks.Select(x => x.Icon != null ? ParseBitmap(x.Icon) : new Bitmap(16, 16)).ToList());
+                }
             }
             catch (Exception ex)
             {
@@ -46,6 +63,32 @@ namespace PSXCardReader.NET.Presenter
 
                 _view.HandleError(ex);
             }
+        }
+
+        private string FormatBlockTitle(Block b)
+        {
+            if (b.IsLinkBlock && b.BlocksUsed > 1)
+            {
+                return "Link block of block #" + _memoryCard.Blocks.IndexOf(b);
+            }
+            else
+            {
+                return b.Title;
+            }
+        }
+
+        private Bitmap ParseBitmap(BlockIcon icon)
+        {
+            Bitmap parsedBitmap = new Bitmap(16, 16);
+
+            for(int i = 0; i < icon.Frames[0].Length; ++i)
+            {
+                int y = i / 16;
+                int x = i % 16;
+                parsedBitmap.SetPixel(x, y, icon.Colors[icon.Frames[0][i]]);
+            }
+
+            return parsedBitmap;
         }
 
         private void ParseFileData()
