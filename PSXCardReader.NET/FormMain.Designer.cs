@@ -36,6 +36,8 @@ namespace PSXCardReader.NET
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.mmItemFileExit = new System.Windows.Forms.ToolStripMenuItem();
             this.listSaves = new System.Windows.Forms.ListView();
+            this.mmItemHelp = new System.Windows.Forms.ToolStripMenuItem();
+            this.mmItemAbout = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -51,7 +53,8 @@ namespace PSXCardReader.NET
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.mmItemFile});
+            this.mmItemFile,
+            this.mmItemHelp});
             this.menuStrip1.LayoutStyle = System.Windows.Forms.ToolStripLayoutStyle.HorizontalStackWithOverflow;
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
@@ -74,20 +77,20 @@ namespace PSXCardReader.NET
             // 
             this.mmItemFileOpen.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mmItemFileOpen.Name = "mmItemFileOpen";
-            this.mmItemFileOpen.Size = new System.Drawing.Size(112, 22);
+            this.mmItemFileOpen.Size = new System.Drawing.Size(152, 22);
             this.mmItemFileOpen.Text = "&Open...";
             this.mmItemFileOpen.Click += new System.EventHandler(this.mmItemFileOpen_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(109, 6);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(149, 6);
             // 
             // mmItemFileExit
             // 
             this.mmItemFileExit.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.mmItemFileExit.Name = "mmItemFileExit";
-            this.mmItemFileExit.Size = new System.Drawing.Size(112, 22);
+            this.mmItemFileExit.Size = new System.Drawing.Size(152, 22);
             this.mmItemFileExit.Text = "&Exit";
             this.mmItemFileExit.Click += new System.EventHandler(this.mmItemFileExit_Click);
             // 
@@ -102,7 +105,23 @@ namespace PSXCardReader.NET
             this.listSaves.Size = new System.Drawing.Size(257, 212);
             this.listSaves.TabIndex = 2;
             this.listSaves.UseCompatibleStateImageBehavior = false;
+            this.listSaves.View = System.Windows.Forms.View.List;
             this.listSaves.DoubleClick += new System.EventHandler(this.listSaves_DoubleClick);
+            // 
+            // mmItemHelp
+            // 
+            this.mmItemHelp.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.mmItemAbout});
+            this.mmItemHelp.Name = "mmItemHelp";
+            this.mmItemHelp.Size = new System.Drawing.Size(44, 20);
+            this.mmItemHelp.Text = "Help";
+            // 
+            // mmItemAbout
+            // 
+            this.mmItemAbout.Name = "mmItemAbout";
+            this.mmItemAbout.Size = new System.Drawing.Size(152, 22);
+            this.mmItemAbout.Text = "About...";
+            this.mmItemAbout.Click += new System.EventHandler(this.mmItemAbout_Click);
             // 
             // FormMain
             // 
@@ -134,6 +153,8 @@ namespace PSXCardReader.NET
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
         private System.Windows.Forms.ToolStripMenuItem mmItemFileExit;
         private System.Windows.Forms.ListView listSaves;
+        private System.Windows.Forms.ToolStripMenuItem mmItemHelp;
+        private System.Windows.Forms.ToolStripMenuItem mmItemAbout;
     }
 }
 

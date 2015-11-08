@@ -11,6 +11,7 @@ namespace PSXCardReader.NET
     {
         public event OnFileOpenHandler OnFileOpen;
         public event OnItemSelectHandler OnItemSelect;
+        public event EventHandler OnAboutSelect;
 
         public FormMain()
         {
@@ -36,6 +37,23 @@ namespace PSXCardReader.NET
                     OnFileOpen(this.FindForm(), new OnFileOpenArgs() { FilePath = openDialog.FileName });
                 }
             }
+        }
+
+        private void FormMain_Load(object sender, EventArgs e)
+        {
+            // Removing image margins (space for icons on left) from menubar items:
+            foreach (ToolStripMenuItem menuItem in menuStrip1.Items)
+                ((ToolStripDropDownMenu)menuItem.DropDown).ShowImageMargin = false;
+        }
+
+        private void listSaves_DoubleClick(object sender, EventArgs e)
+        {
+            OnItemSelect(sender, new OnItemSelectArgs() { BlockIndex = listSaves.SelectedIndices[0] });
+        }
+
+        private void mmItemAbout_Click(object sender, EventArgs e)
+        {
+            OnAboutSelect(sender, e);
         }
 
         public void UpdateOpenedFile(string fileName)
@@ -69,19 +87,16 @@ namespace PSXCardReader.NET
 
         public void ShowBlockDetails(string blockName, int blocksUsed)
         {
-            MessageBox.Show("Full title: " + blockName + Environment.NewLine + "Blocks used: " + blocksUsed);
+            MessageBox.Show("Full title: " + blockName + Environment.NewLine + 
+                            "Blocks used: " + blocksUsed, "Block Information", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
 
-        private void FormMain_Load(object sender, EventArgs e)
+        public void ShowProgramInfo(string programName, string developer, string versionString, string copyright)
         {
-            // Removing image margins (space for icons on left) from menubar items:
-            foreach (ToolStripMenuItem menuItem in menuStrip1.Items)
-                ((ToolStripDropDownMenu)menuItem.DropDown).ShowImageMargin = false;
-        }
-
-        private void listSaves_DoubleClick(object sender, EventArgs e)
-        {
-            OnItemSelect(sender, new OnItemSelectArgs() { BlockIndex = listSaves.SelectedIndices[0] });
+            MessageBox.Show(programName + Environment.NewLine + 
+                            "By: " + developer + Environment.NewLine + 
+                            versionString + Environment.NewLine + 
+                            copyright + Environment.NewLine, "About", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

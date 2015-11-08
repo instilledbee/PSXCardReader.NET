@@ -20,7 +20,7 @@ namespace PSXCardReader.NET
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new FormMain());
 
-#if DEBUG
+#if TRACE
             ITraceView traceView = new TextBoxTraceView();
             ITracePresenter tracePresenter = new TextBoxTracePresenter(traceView);
             traceView.ShowView();
@@ -33,7 +33,7 @@ namespace PSXCardReader.NET
             IMainPresenter mainPresenter = new MainPresenter(mainView);
             mainView.ShowView();
 
-#if DEBUG
+#if TRACE
             Trace.Flush();
 #endif 
         }

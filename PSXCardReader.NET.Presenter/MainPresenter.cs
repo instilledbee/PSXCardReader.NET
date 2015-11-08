@@ -8,6 +8,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Reflection;
 
 namespace PSXCardReader.NET.Presenter
 {
@@ -22,6 +23,24 @@ namespace PSXCardReader.NET.Presenter
             _view = view;
             _view.OnFileOpen += _view_OnFileOpen;
             _view.OnItemSelect += _view_OnItemSelect;
+            _view.OnAboutSelect += _view_OnAboutSelect;
+        }
+
+        void _view_OnAboutSelect(object sender, EventArgs e)
+        {
+            try 
+            {
+                Assembly runningApp = Assembly.GetEntryAssembly();
+                AssemblyCompanyAttribute developer = runningApp.GetCustomAttribute<AssemblyCompanyAttribute>();
+                AssemblyFileVersionAttribute fileVersion = runningApp.GetCustomAttribute<AssemblyFileVersionAttribute>();
+                AssemblyCopyrightAttribute copyright = runningApp.GetCustomAttribute<AssemblyCopyrightAttribute>();
+
+                _view.ShowProgramInfo(runningApp.GetName().Name, developer.Company, fileVersion.Version, copyright.Copyright);
+            }
+            catch (Exception ex)
+            {
+                _view.HandleError(ex);
+            }
         }
 
         private void _view_OnItemSelect(object sender, OnItemSelectArgs e)
@@ -67,7 +86,7 @@ namespace PSXCardReader.NET.Presenter
 
         private string FormatBlockTitle(Block b)
         {
-            if (b.IsLinkBlock && b.BlocksUsed > 1)
+            if (b.IsLinkBlock)
             {
                 return "Link block of block #" + _memoryCard.Blocks.IndexOf(b);
             }
