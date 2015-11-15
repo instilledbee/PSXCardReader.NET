@@ -7,7 +7,7 @@ This project serves as a rudimentary front-end for the [PSXMMCLibrary](http://gi
 # Project Structure
 The project has been designed with the [model-view-presenter](https://en.wikipedia.org/wiki/Model%E2%80%93view%E2%80%93presenter) architectural pattern in mind, specifically a passive-view archetype. it is recommended to keep in mind the purpose of each module when implementing modifications, for good coding practices and maintaing separation of concerns.
 
-* `PSXCardReader.NET.Models` contains the presnter classes, interfaces and majority of the logic. This is where you want to look to know how the project uses the PSXMMCLibrary.
+* `PSXCardReader.NET.Presenter` contains the presenter classes, interfaces and majority of the logic. This is where you want to look to know how the project uses the PSXMMCLibrary.
 * `PSXCardReader.NET.View` contains view interfaces implemented by the WinForms project.
 * `PSXCardReader.NET` is an implementation of the View interfaces, represented by a WinForms GUI application.
 
