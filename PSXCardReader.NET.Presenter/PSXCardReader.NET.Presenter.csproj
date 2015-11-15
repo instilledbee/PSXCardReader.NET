@@ -30,6 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="PSXMMCLibrary, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PSXMMCLibrary\PSXMMCLibrary\bin\Release\PSXMMCLibrary.dll</HintPath>
+    </Reference>
+    <Reference Include="PSXMMCLibrary.Models, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\PSXMMCLibrary\PSXMMCLibrary\bin\Release\PSXMMCLibrary.Models.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
     <Reference Include="System.Drawing" />
@@ -50,14 +58,6 @@
     <ProjectReference Include="..\PSXCardReader.NET.View\PSXCardReader.NET.View.csproj">
       <Project>{089637a6-281a-4631-a23c-b993ed2bc6cc}</Project>
       <Name>PSXCardReader.NET.View</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PSXMMCLibrary.Models\PSXMMCLibrary.Models.csproj">
-      <Project>{bf0412a9-cafd-42c9-8868-67fffc390565}</Project>
-      <Name>PSXMMCLibrary.Models</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PSXMMCLibrary\PSXMMCLibrary.csproj">
-      <Project>{bf21b471-1928-4a7e-8bb2-0a13d106e6ed}</Project>
-      <Name>PSXMMCLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
