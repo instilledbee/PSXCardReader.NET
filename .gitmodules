@@ -1,0 +1,3 @@
+[submodule "PSXMMCLibrary"]
+	path = PSXMMCLibrary
+	url = https://github.com/instilledbee/PSXMMCLibrary.git
