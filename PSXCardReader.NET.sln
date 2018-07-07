@@ -1,17 +1,22 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 2013
-VisualStudioVersion = 12.0.40629.0
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2005
 MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSXCardReader.NET.View", "PSXCardReader.NET.View\PSXCardReader.NET.View.csproj", "{09658F64-6393-44A8-A9C7-D5E5691478D2}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSXCardReader.NET.Presenter", "PSXCardReader.NET.Presenter\PSXCardReader.NET.Presenter.csproj", "{2B53A258-64D4-43A3-AA21-9B8411EF82F3}"
+	ProjectSection(ProjectDependencies) = postProject
+		{484C81B8-F58F-48D4-BF94-16C050F01C2B} = {484C81B8-F58F-48D4-BF94-16C050F01C2B}
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "PSXMMCLibrary", "PSXMMCLibrary", "{232BDE54-6C37-4D9E-A996-040645F2D4A6}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSXMMCLibrary.Models", "PSXMMCLibrary\PSXMMCLibrary.Models\PSXMMCLibrary.Models.csproj", "{484C81B8-F58F-48D4-BF94-16C050F01C2B}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "PSXMMCLibrary", "PSXMMCLibrary\PSXMMCLibrary\PSXMMCLibrary.csproj", "{63B756F8-84BB-461A-99BA-A617B17E35CA}"
+EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXCardReader.NET", "PSXCardReader.NET\PSXCardReader.NET.csproj", "{C417747B-755D-4C07-9CDE-A4A8207A28DF}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXCardReader.NET.Presenter", "PSXCardReader.NET.Presenter\PSXCardReader.NET.Presenter.csproj", "{49700250-ADA1-4858-826D-647830547CED}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXCardReader.NET.View", "PSXCardReader.NET.View\PSXCardReader.NET.View.csproj", "{089637A6-281A-4631-A23C-B993ED2BC6CC}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXMMCLibrary", "PSXMMCLibrary\PSXMMCLibrary\PSXMMCLibrary.csproj", "{BF21B471-1928-4A7E-8BB2-0A13D106E6ED}"
-EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "PSXMMCLibrary.Models", "PSXMMCLibrary\PSXMMCLibrary.Models\PSXMMCLibrary.Models.csproj", "{BF0412A9-CAFD-42C9-8868-67FFFC390565}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,28 +24,35 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{09658F64-6393-44A8-A9C7-D5E5691478D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{09658F64-6393-44A8-A9C7-D5E5691478D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{09658F64-6393-44A8-A9C7-D5E5691478D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{09658F64-6393-44A8-A9C7-D5E5691478D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2B53A258-64D4-43A3-AA21-9B8411EF82F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2B53A258-64D4-43A3-AA21-9B8411EF82F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2B53A258-64D4-43A3-AA21-9B8411EF82F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2B53A258-64D4-43A3-AA21-9B8411EF82F3}.Release|Any CPU.Build.0 = Release|Any CPU
+		{484C81B8-F58F-48D4-BF94-16C050F01C2B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{484C81B8-F58F-48D4-BF94-16C050F01C2B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{484C81B8-F58F-48D4-BF94-16C050F01C2B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{484C81B8-F58F-48D4-BF94-16C050F01C2B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{63B756F8-84BB-461A-99BA-A617B17E35CA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{63B756F8-84BB-461A-99BA-A617B17E35CA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{63B756F8-84BB-461A-99BA-A617B17E35CA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{63B756F8-84BB-461A-99BA-A617B17E35CA}.Release|Any CPU.Build.0 = Release|Any CPU
 		{C417747B-755D-4C07-9CDE-A4A8207A28DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{C417747B-755D-4C07-9CDE-A4A8207A28DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C417747B-755D-4C07-9CDE-A4A8207A28DF}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C417747B-755D-4C07-9CDE-A4A8207A28DF}.Release|Any CPU.Build.0 = Release|Any CPU
-		{49700250-ADA1-4858-826D-647830547CED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{49700250-ADA1-4858-826D-647830547CED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{49700250-ADA1-4858-826D-647830547CED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{49700250-ADA1-4858-826D-647830547CED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{089637A6-281A-4631-A23C-B993ED2BC6CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{089637A6-281A-4631-A23C-B993ED2BC6CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{089637A6-281A-4631-A23C-B993ED2BC6CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{089637A6-281A-4631-A23C-B993ED2BC6CC}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF21B471-1928-4A7E-8BB2-0A13D106E6ED}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF21B471-1928-4A7E-8BB2-0A13D106E6ED}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF21B471-1928-4A7E-8BB2-0A13D106E6ED}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF21B471-1928-4A7E-8BB2-0A13D106E6ED}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BF0412A9-CAFD-42C9-8868-67FFFC390565}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BF0412A9-CAFD-42C9-8868-67FFFC390565}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BF0412A9-CAFD-42C9-8868-67FFFC390565}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BF0412A9-CAFD-42C9-8868-67FFFC390565}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{484C81B8-F58F-48D4-BF94-16C050F01C2B} = {232BDE54-6C37-4D9E-A996-040645F2D4A6}
+		{63B756F8-84BB-461A-99BA-A617B17E35CA} = {232BDE54-6C37-4D9E-A996-040645F2D4A6}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {A9D3EC9C-02B2-41A0-8D79-60E822ABC162}
 	EndGlobalSection
 EndGlobal
